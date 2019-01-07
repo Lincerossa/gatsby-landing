@@ -8,9 +8,6 @@ interface FullpageProps {
   children: JSX.Element[]
 }
 
-const pluginWrapper = () => {
-  require('fullpage.js/vendors/scrolloverflow');
-};
 
 export default class Fullpage extends React.Component<FullpageProps>{
   constructor(props: FullpageProps){
@@ -20,10 +17,9 @@ export default class Fullpage extends React.Component<FullpageProps>{
     const { children } = this.props
     return (
       <ReactFullpage
-        pluginWrapper
         render={({ state, fullpageApi }) => {
           return (
-            <ReactFullpage.Wrapper>
+            <div>
             {
               React
                 .Children
@@ -32,7 +28,7 @@ export default class Fullpage extends React.Component<FullpageProps>{
                   <S.Section className="section"><S.SectionInner>{element}</S.SectionInner></S.Section>))
             }
 
-            </ReactFullpage.Wrapper>
+            </div>
           )
         }
       }
