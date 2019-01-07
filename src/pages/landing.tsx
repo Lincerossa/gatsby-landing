@@ -1,21 +1,22 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import Fullpage from '../components/Fullpage';
+import Sky from '../components/Sky';
+import Slide from '../components/Slide';
+import Background from '../components/Background';
 
-import Layout from '../components/layout'
-import Image from '../components/image'
-import SEO from '../components/seo'
-
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby marcello site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+export default () => (
+  <Fullpage>
+    <Slide title="Bormiini Paracelli">
+      <Sky />
+    </Slide>
+    <Background color={{text: "black", background: "white"}}>
+      <Slide title="Lorem ipsum dolor sit amet"/>
+    </Background>
+    <Background color={{text: "white", background: "black"}}>
+      <Slide title="Lorem ipsum dolor sit amet"/>
+    </Background>
+    <Background color={{text: "red", background: "white"}}>
+      <Slide title="Lorem ipsum dolor sit amet"/>
+    </Background>
+  </Fullpage>
 )
-
-export default IndexPage
